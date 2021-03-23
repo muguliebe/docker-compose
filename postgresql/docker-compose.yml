@@ -1,0 +1,18 @@
+# docker-compose.yml
+version: '3'
+services:
+  postgresql:
+    image: postgres
+    container_name: postgresql
+    restart: always
+    volumes:
+      - ~/docker/postgresql/data:/var/lib/postgresql/data
+#    volumes:
+#      - type: bind
+#        source: ~/docker/postgreesql/data
+#        target: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: "test"
+      TZ: "Asia/Seoul"
